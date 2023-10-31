@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    container_name: ${APP_NAME}_app
+    restart: on-failure
+    build: ./docker-compose
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+volumes:
+  bundle_cache:
